@@ -29,7 +29,7 @@
 
 ## 问题 5：用了什么技术
 
-Next.js 16 + TypeScript + Tailwind + Supabase + Chart.js + Vitest + psychometric + Netlify + HTTP Basic Auth
+Next.js 16 + TypeScript + Tailwind + Supabase + Chart.js + Vitest + psychometric + Netlify + 自定义登录页（admin_session cookie）
 
 ## 问题 6：如何用 agentic AI
 
@@ -63,7 +63,7 @@ Next.js 16 + TypeScript + Tailwind + Supabase + Chart.js + Vitest + psychometric
 
 - reverseScore 故意写错实验（突变测试，证明测试有效）
 - Cronbach α 加门槛（completedCount < 10 时不报告）
-- /admin 加 Basic Auth（proxy.ts）
+- /admin 加登录页 + cookie 登录态（proxy.ts）
 
 ## 问题 11：如果还有一周会改进什么
 

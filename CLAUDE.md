@@ -28,7 +28,7 @@ This file provides guidance to Claude Code when working with code in this reposi
 - **图表**：Chart.js + react-chartjs-2（雷达图）
 - **测试**：Vitest 4
 - **统计**：psychometric 包（cronbachAlpha）
-- **鉴权**：HTTP Basic Auth（proxy.ts 保护 /admin 和 /api/admin/stats）
+- **鉴权**：自定义登录页 + admin_session cookie（proxy.ts 保护 /admin 和 /api/admin/stats）
 - **部署**：Netlify（从 GitHub main 分支自动部署）
 
 ## 项目结构
@@ -39,8 +39,12 @@ This file provides guidance to Claude Code when working with code in this reposi
   - `results/page.tsx` — 结果页
   - `feedback/page.tsx` — 反馈页
   - `admin/page.tsx` — 管理后台
+  - `admin/login/page.tsx` — 管理员登录页
+  - `admin/logout-button.tsx` — 登出按钮
   - `api/submit/route.ts` — 提交答案
   - `api/admin/stats/route.ts` — 管理端聚合查询
+  - `api/admin/login/route.ts` — 登录 API
+  - `api/admin/logout/route.ts` — 登出 API
 - `lib/` — 业务逻辑
   - `questions.ts` — 64 题数据（含 dimension 和 reverse 标记）
   - `scoring.ts` — 反向计分、维度均值、Cronbach α 适配
@@ -49,7 +53,7 @@ This file provides guidance to Claude Code when working with code in this reposi
   - `session.ts` — sessionStorage 封装
   - `results.ts` — 结果页展示数据
   - `admin.ts` — 管理页聚合逻辑
-- `proxy.ts` — /admin 的 Basic Auth 中间件
+- `proxy.ts` — /admin 的登录态中间件（检查 admin_session cookie）
 
 ## 环境变量
 
@@ -58,7 +62,7 @@ This file provides guidance to Claude Code when working with code in this reposi
 - `NEXT_PUBLIC_SUPABASE_URL` — Supabase 项目 URL
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` — 匿名 key，前端写数据用
 - `SUPABASE_SERVICE_ROLE_KEY` — 服务端 key，仅管理端聚合查询，绝不暴露给浏览器
-- `ADMIN_PASSWORD` — 管理后台 Basic Auth 密码
+- `ADMIN_PASSWORD` — 管理后台登录密码
 
 ## 常用命令
 

@@ -46,7 +46,7 @@ npm run dev
 | NEXT_PUBLIC_SUPABASE_URL | Supabase 项目 URL |
 | NEXT_PUBLIC_SUPABASE_ANON_KEY | 匿名 key，前端写数据用 |
 | SUPABASE_SERVICE_ROLE_KEY | 服务端 key，仅管理端聚合查询，绝不暴露给浏览器 |
-| ADMIN_PASSWORD | 管理后台 Basic Auth 密码 |
+| ADMIN_PASSWORD | 管理后台登录密码 |
 
 ## 测试
 
