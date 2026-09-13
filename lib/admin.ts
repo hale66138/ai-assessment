@@ -89,8 +89,8 @@ export async function getAdminStats(): Promise<AdminStats> {
   const cronbachAlphas = {} as Record<Dimension, number | null>;
   for (const dim of DIMENSIONS) {
     const items = QUESTIONS.filter((q) => q.dimension === dim);
-    // 样本量 < 30 或题目数 < 3 时 α 不稳定，直接置空不计算
-    if (n < 30 || items.length < 3) {
+    // 样本量 < 10 或题目数 < 3 时 α 不稳定，直接置空不计算
+    if (n < 10 || items.length < 3) {
       cronbachAlphas[dim] = null;
       continue;
     }

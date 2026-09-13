@@ -26,7 +26,7 @@ export default async function AdminPage() {
   }
 
   const { completedCount, dimensionAverages, questionStats, cronbachAlphas } = stats;
-  const lowSample = completedCount < 30;
+  const lowSample = completedCount < 10;
 
   return (
     <main className="flex flex-1 flex-col items-center bg-zinc-50 px-4 py-10 dark:bg-black">
@@ -40,7 +40,7 @@ export default async function AdminPage() {
           </p>
           {lowSample && (
             <p className="mt-3 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-700 dark:bg-amber-500/10 dark:text-amber-300">
-              样本量不足 30，以下统计仅供参考。
+              样本量有限（少于 10 人），以下统计仅供参考。
             </p>
           )}
         </section>
@@ -92,7 +92,7 @@ export default async function AdminPage() {
             })}
           </ul>
           <p className="mt-3 text-xs text-zinc-400 dark:text-zinc-500">
-            α 通常以 0.7 为可接受参考值，仅供参考。
+            α 通常以 0.7 为可接受参考值。样本量 &lt; 10 时暂不计算；10–30 人时数值波动较大，仅供参考。
           </p>
         </section>
 

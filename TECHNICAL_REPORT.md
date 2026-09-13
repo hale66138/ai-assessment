@@ -23,7 +23,7 @@
 
 - 反向题：scored = 6 - raw
 - 维度分：该维度所有已答题目的 scored_value 均值
-- Cronbach α：按维度算，样本 < 30 时不报告
+- Cronbach α：按维度算，样本 < 10 时不报告
 - 计分逻辑独立在 lib/scoring.ts，7 个 Vitest 测试覆盖
 - 验证方法：把 reverseScore 改成 7-value，测试变红，证明测试有效
 
@@ -54,7 +54,7 @@ Next.js 16 + TypeScript + Tailwind + Supabase + Chart.js + Vitest + psychometric
 ## 问题 9：AI 犯了什么错
 
 - AI 初始没给 /admin 加访问控制
-- AI 生成的 cronbachAlpha 在样本 < 30 时直接输出极端值
+- AI 生成的 cronbachAlpha 在样本 < 10 时直接输出极端值
 - AI 提议临时改样本量门槛验证被拒
 
 ## 问题 10：如何验证和修正
@@ -62,7 +62,7 @@ Next.js 16 + TypeScript + Tailwind + Supabase + Chart.js + Vitest + psychometric
 三个例子：
 
 - reverseScore 故意写错实验（突变测试，证明测试有效）
-- Cronbach α 加门槛（completedCount < 30 时不报告）
+- Cronbach α 加门槛（completedCount < 10 时不报告）
 - /admin 加 Basic Auth（proxy.ts）
 
 ## 问题 11：如果还有一周会改进什么

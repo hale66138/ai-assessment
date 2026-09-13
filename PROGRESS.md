@@ -129,7 +129,7 @@ lib/scoring.test.ts：7 个测试全绿
 - lib/admin.ts：getAdminStats（完成人数、维度均值、题目分布、α）
 
 ### 10. Cronbach α 显示修复（已完成）
-- lib/admin.ts：completedCount < 30 时所有维度 α 返回 null；题目数门槛 < 3 也返回 null
+- lib/admin.ts：completedCount < 10 时所有维度 α 返回 null；题目数门槛 < 3 也返回 null
 - app/admin/page.tsx：null 显示「样本不足，暂不计算」，有值保留两位小数
 - lib/scoring.ts：给 cronbachAlpha 加了注释，说明方向对齐由调用方做
 - 已验证：/admin 现在 7 个维度全部显示「样本不足，暂不计算」，不再出现 -3.938 等极端值
@@ -253,7 +253,7 @@ ai-assessment/
 
 1. 早期 Google Fonts 报错，通过删除 next/font/google 解决
 2. reverseScore「故意写错」实验：改成 7-value 后 4 个测试变红，证明测试有效（但第一次因为未保存文件导致误判）
-3. Cronbach α 在小样本下出现 -22.857 等极端值，识别为统计假象，加 completedCount < 30 门槛修复
+3. Cronbach α 在小样本下出现 -22.857 等极端值，识别为统计假象，加 completedCount < 10 门槛修复
 4. 结果页缺「维度间比较」，由挑战要求补充
 5. 三处题目中文翻译微调（BFI_35、BFI_40、GAAIS_02）
-6. AI 一度提议「临时把 n<30 改成 n<2 验证样本充足分支」，被拒绝（避免忘记回滚）
+6. AI 一度提议「临时把 n<10 改成 n<2 验证样本充足分支」，被拒绝（避免忘记回滚）
