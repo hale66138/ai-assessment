@@ -16,7 +16,7 @@ This file provides guidance to Claude Code when working with code in this reposi
 用途：教育研究，不是临床诊断工具。
 
 **线上地址**：https://ai-assessment-hale.netlify.app
-**管理员后台**：https://ai-assessment-hale.netlify.app/admin（用户名 admin，密码不写入本文件）
+**管理员后台**：https://ai-assessment-hale.netlify.app/admin（访问凭证单独提供）
 **源码**：https://github.com/hale66138/ai-assessment
 
 ## 技术栈

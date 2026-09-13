@@ -6,8 +6,7 @@
 
 ## 管理员后台
 - 地址：https://ai-assessment-hale.netlify.app/admin
-- 用户名：admin
-- 密码：单独提供
+- 访问凭证：单独提供
 - 建议用桌面浏览器访问
 
 ## 源码
