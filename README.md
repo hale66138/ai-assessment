@@ -38,9 +38,9 @@ npm run dev
 
 | 变量 | 说明 |
 | --- | --- |
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase 项目 URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | anon public key（可公开，用于匿名写入） |
-| `SUPABASE_SERVICE_ROLE_KEY` | service_role secret key（仅服务端使用，绝不暴露给浏览器） |
+| Supabase 项目 URL | Supabase 项目 URL |
+| Supabase anon key | anon public key（可公开，用于匿名写入） |
+| Supabase service role key | 服务端密钥（仅服务端使用，绝不暴露给浏览器） |
 
 ## 部署（Vercel）
 
