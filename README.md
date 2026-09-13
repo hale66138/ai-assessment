@@ -92,6 +92,7 @@ lib/
 - AI_DEV_LOG.md：AI 开发过程记录
 - TECHNICAL_REPORT.md：技术报告
 - PILOT_EVALUATION.md：试点评估
+- DELIVERY.md：交付清单
 - PROGRESS.md：开发进度交接
 
 ## 部署
