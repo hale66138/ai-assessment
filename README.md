@@ -34,20 +34,24 @@ npm run dev
 
 ## 环境变量
 
-在 Supabase 控制台 → Project Settings → API 中可找到这三项：
+前 3 项可在 Supabase 控制台 → Project Settings → API 中找到：
 
 | 变量 | 说明 |
 | --- | --- |
 | Supabase 项目 URL | Supabase 项目 URL |
 | Supabase anon key | anon public key（可公开，用于匿名写入） |
 | Supabase service role key | 服务端密钥（仅服务端使用，绝不暴露给浏览器） |
+| `ADMIN_PASSWORD` | 管理员页面密码，仅 `/admin` 和 `/api/admin/stats` 需要 |
 
-## 部署（Vercel）
+> `ADMIN_PASSWORD` 留空时 `/admin` 直接放行（仅用于本地开发）。
 
-1. 初始化 Git 仓库并推送到 GitHub / GitLab。
-2. 在 Vercel 中 Import 该仓库。
-3. 在 Project Settings → Environment Variables 中填入上述 3 个环境变量。
-4. 部署，构建命令与输出目录使用 Vercel 对 Next.js 的默认值即可。
+## 部署（Netlify）
+
+1. 将代码推送到 GitHub。
+2. 在 Netlify 中 Import 该仓库（Add new site → Import an existing project）。
+3. 构建命令与发布目录用 Netlify 对 Next.js 的自动检测默认值即可。
+4. 在 Site configuration → Environment variables 中填入 4 个变量：3 个 Supabase（见上表）+ `ADMIN_PASSWORD`。
+5. 部署成功后，`/admin` 需要 HTTP Basic Auth：用户名 `admin`，密码为 `ADMIN_PASSWORD` 的值。
 
 数据库需已存在 4 张表（`participants` / `answers` / `dimension_scores` / `feedback`）并配置 RLS（anon 只能 INSERT，service_role 全权限）。
 
