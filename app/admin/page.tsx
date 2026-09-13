@@ -2,6 +2,7 @@ import { getAdminStats } from "@/lib/admin";
 import { QUESTIONS } from "@/lib/questions";
 import { DIMENSIONS } from "@/lib/scoring";
 import { DIMENSION_META, formatScore } from "@/lib/results";
+import { LogoutButton } from "./logout-button";
 
 export const dynamic = "force-dynamic";
 
@@ -31,7 +32,10 @@ export default async function AdminPage() {
   return (
     <main className="flex flex-1 flex-col items-center bg-zinc-50 px-4 py-10 dark:bg-black">
       <div className="w-full max-w-3xl">
-        <h1 className="text-2xl font-semibold text-black dark:text-zinc-50">管理后台 · 统计</h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-semibold text-black dark:text-zinc-50">管理后台 · 统计</h1>
+          <LogoutButton />
+        </div>
 
         <section className="mt-6 rounded-2xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
           <p className="text-sm text-zinc-500 dark:text-zinc-400">完成人数</p>
